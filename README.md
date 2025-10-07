@@ -18,7 +18,7 @@ This model analyzes environmental parameters like soil moisture, temperature, hu
 |------|------|--------------|
 | 1️⃣ | `1_data_cleaning.py` | Loads raw datasets and imputes missing values using **KNN Imputer** |
 | 2️⃣ | `2_outlier_detection.py` | Detects and caps outliers using the **IQR method** |
-| 3️⃣ | `3_feature_engineering.py` | Merges datasets, encodes labels, and creates new derived features the data called 'Final_irregation_optimization_data' and in code called 'merged_df'|
+| 3️⃣ | `3_feature_engineering.py` | Merges datasets, encodes labels, and creates new derived features |
 | 4️⃣ | `4_model_training.py` | Tunes **CatBoost** hyperparameters using **Optuna** and trains the model |
 | 5️⃣ | `5_model_testing.py` | Loads the saved model, evaluates it, and saves predictions |
 
@@ -29,12 +29,42 @@ This model analyzes environmental parameters like soil moisture, temperature, hu
 ### 1. `Crop_recommendation.csv`
 Contains data about soil nutrients and environmental conditions for crop recommendations.  
 **Columns:**
+N, P, K, temperature, humidity, ph, rainfall, label
+
+pgsql
+Copy code
 
 ### 2. `TARP.csv`
-Contains real-time sensor readings from the irrigation system. 
-
+Contains real-time sensor readings from the irrigation system.  
 **Columns include:**
+soil_moisture, air_temperature_(c), wind_speed_(km/h),
+humidity, pressure_(kpa), ph, n, p, k, status, ...
 
+yaml
+Copy code
+
+---
+
+## 🧰 Requirements
+
+Install the dependencies with:
+```bash
+pip install -r requirements.txt
+requirements.txt (recommended content)
+nginx
+Copy code
+pandas
+numpy
+matplotlib
+scikit-learn
+catboost
+optuna
+joblib
+🚀 How to Run the Project
+Make sure your folder structure looks like this:
+
+kotlin
+Copy code
 Smart_Irrigation_Model/
 │
 ├── data/
@@ -49,7 +79,9 @@ Smart_Irrigation_Model/
 ├── 4_model_training.py
 ├── 5_model_testing.py
 └── README.md
-
+Step-by-step execution:
+bash
+Copy code
 # Step 1: Data cleaning
 python 1_data_cleaning.py
 
@@ -65,7 +97,6 @@ python 4_model_training.py
 # Step 5: Evaluate and test saved model
 python 5_model_testing.py
 📈 Model Information
-
 Algorithm: CatBoost Classifier
 
 Optimization: Optuna hyperparameter tuning
@@ -76,15 +107,10 @@ Final Model Saved: models/catboost_best_model.pkl
 
 📊 Output Files
 File	Description
-
 data/big_df_cleaned.csv	After missing value imputation
-
 data/big_df_no_outliers.csv	After outlier removal
-
 data/merged_df_ready.csv	After feature engineering
-
 models/catboost_best_model.pkl	Trained model
-
 data/test_predictions.csv	Final model predictions
 
 🧩 Example Prediction Columns
@@ -98,15 +124,12 @@ k	50
 ph	6.4
 Predicted Status	1 (Irrigation ON)
 
-🧑‍💻 Authors
-
-Josam Hany & Badr Elsafy 
-
-Computer Science Students | Data Scientist & ML Engineers
-
+🧑‍💻 Author
+Josam Hany Fouad
+Computer Science Student | Data Scientist & ML Engineer
 📍 Alexandria, Egypt
-
+🔗 LinkedIn
 
 🏁 License
-
 This project is released under the MIT License — feel free to use and modify it with credit.
+
