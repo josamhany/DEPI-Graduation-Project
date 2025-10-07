@@ -36,11 +36,8 @@ Contains real-time sensor readings from the irrigation system.
 **Columns include:**
 
 Smart_Irrigation_Model/
-
 │
-
 ├── data/
-
 │   ├── Crop_recommendation.csv
 │   ├── TARP.csv
 │
@@ -52,6 +49,7 @@ Smart_Irrigation_Model/
 ├── 4_model_training.py
 ├── 5_model_testing.py
 └── README.md
+
 # Step 1: Data cleaning
 python 1_data_cleaning.py
 
