@@ -98,7 +98,9 @@ Predicted Status	1 (Irrigation ON)
 🧑‍💻 Authors
 
 Josam Hany & Badr Elsafy 
-Computer Science Student | Data Scientist & ML Engineer
+
+Computer Science Students | Data Scientist & ML Engineers
+
 📍 Alexandria, Egypt
 
 
