@@ -73,11 +73,17 @@ Final Model Saved: models/catboost_best_model.pkl
 
 📊 Output Files
 File	Description
+
 data/big_df_cleaned.csv	After missing value imputation
+
 data/big_df_no_outliers.csv	After outlier removal
+
 data/merged_df_ready.csv	After feature engineering
+
 models/catboost_best_model.pkl	Trained model
+
 data/test_predictions.csv	Final model predictions
+
 🧩 Example Prediction Columns
 Feature	Example Value
 soil_moisture	33.5
