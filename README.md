@@ -31,11 +31,16 @@ Contains data about soil nutrients and environmental conditions for crop recomme
 **Columns:**
 
 ### 2. `TARP.csv`
-Contains real-time sensor readings from the irrigation system.  
+Contains real-time sensor readings from the irrigation system. 
+
 **Columns include:**
+
 Smart_Irrigation_Model/
+
 │
+
 ├── data/
+
 │   ├── Crop_recommendation.csv
 │   ├── TARP.csv
 │
