@@ -1,3 +1,4 @@
+````markdown
 # 🌱 Smart Irrigation System - ML Model
 
 This project develops a **machine learning-based Smart Irrigation System** that predicts whether irrigation should be **ON or OFF** based on environmental, soil, and nutrient data.  
@@ -28,20 +29,16 @@ This model analyzes environmental parameters like soil moisture, temperature, hu
 
 ### 1. `Crop_recommendation.csv`
 Contains data about soil nutrients and environmental conditions for crop recommendations.  
-**Columns:**
-N, P, K, temperature, humidity, ph, rainfall, label
+**Columns:**  
+`N`, `P`, `K`, `temperature`, `humidity`, `ph`, `rainfall`, `label`
 
-pgsql
-Copy code
+---
 
 ### 2. `TARP.csv`
 Contains real-time sensor readings from the irrigation system.  
-**Columns include:**
-soil_moisture, air_temperature_(c), wind_speed_(km/h),
-humidity, pressure_(kpa), ph, n, p, k, status, ...
-
-yaml
-Copy code
+**Columns include:**  
+`soil_moisture`, `air_temperature_(c)`, `wind_speed_(km/h)`,  
+`humidity`, `pressure_(kpa)`, `ph`, `n`, `p`, `k`, `status`, ...
 
 ---
 
@@ -50,9 +47,11 @@ Copy code
 Install the dependencies with:
 ```bash
 pip install -r requirements.txt
-requirements.txt (recommended content)
-nginx
-Copy code
+````
+
+**`requirements.txt` recommended content:**
+
+```
 pandas
 numpy
 matplotlib
@@ -60,12 +59,16 @@ scikit-learn
 catboost
 optuna
 joblib
-🚀 How to Run the Project
+```
+
+---
+
+## 🚀 How to Run the Project
+
 Make sure your folder structure looks like this:
 
-kotlin
-Copy code
-Smart_Irrigation_Model/
+```
+Smart_Irrigation_Classifier/
 │
 ├── data/
 │   ├── Crop_recommendation.csv
@@ -79,9 +82,11 @@ Smart_Irrigation_Model/
 ├── 4_model_training.py
 ├── 5_model_testing.py
 └── README.md
-Step-by-step execution:
-bash
-Copy code
+```
+
+### Step-by-step execution:
+
+```bash
 # Step 1: Data cleaning
 python 1_data_cleaning.py
 
@@ -96,40 +101,57 @@ python 4_model_training.py
 
 # Step 5: Evaluate and test saved model
 python 5_model_testing.py
-📈 Model Information
-Algorithm: CatBoost Classifier
+```
 
-Optimization: Optuna hyperparameter tuning
+---
 
-Evaluation Metric: Accuracy + Classification Report
+## 📈 Model Information
 
-Final Model Saved: models/catboost_best_model.pkl
+* **Algorithm:** CatBoost Classifier
+* **Optimization:** Optuna hyperparameter tuning
+* **Evaluation Metric:** Accuracy + Classification Report
+* **Final Model Saved:** `models/catboost_best_model.pkl`
+* **Accuracy Achieved:** Over **87%** on unseen data (100K+ samples)
 
-📊 Output Files
-File	Description
-data/big_df_cleaned.csv	After missing value imputation
-data/big_df_no_outliers.csv	After outlier removal
-data/merged_df_ready.csv	After feature engineering
-models/catboost_best_model.pkl	Trained model
-data/test_predictions.csv	Final model predictions
+---
 
-🧩 Example Prediction Columns
-Feature	Example Value
-soil_moisture	33.5
-air_temperature_(c)	27.4
-humidity	62
-n	45
-p	30
-k	50
-ph	6.4
-Predicted Status	1 (Irrigation ON)
+## 📊 Output Files
 
-🧑‍💻 Author
-Josam Hany Fouad
+| File                             | Description                    |
+| -------------------------------- | ------------------------------ |
+| `data/big_df_cleaned.csv`        | After missing value imputation |
+| `data/big_df_no_outliers.csv`    | After outlier removal          |
+| `data/merged_df_ready.csv`       | After feature engineering      |
+| `models/catboost_best_model.pkl` | Trained model                  |
+| `data/test_predictions.csv`      | Final model predictions        |
+
+---
+
+## 🧩 Example Prediction Columns
+
+| Feature              | Example Value     |
+| -------------------- | ----------------- |
+| soil_moisture        | 33.5              |
+| air_temperature_(c)  | 27.4              |
+| humidity             | 62                |
+| n                    | 45                |
+| p                    | 30                |
+| k                    | 50                |
+| ph                   | 6.4               |
+| **Predicted Status** | 1 (Irrigation ON) |
+
+---
+
+## 🧑‍💻 Author
+
+**Josam Hany Fouad**
 Computer Science Student | Data Scientist & ML Engineer
 📍 Alexandria, Egypt
-🔗 LinkedIn
+🔗 [LinkedIn](https://www.linkedin.com/in/josamhany/)
 
-🏁 License
-This project is released under the MIT License — feel free to use and modify it with credit.
+---
+
+## 🏁 License
+
+This project is released under the **MIT License** — feel free to use and modify it with credit.
 
